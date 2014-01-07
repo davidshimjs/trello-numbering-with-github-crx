@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Trello with Github</title>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="popup.css" />
+</head>
+<body>
+<div>
+    <button id="trello" class="btn btn-block btn-primary">Connect to Trello</button>
+    <div class="form-group boardGroup">
+        <label for="board">Trello Board Id</label>
+        <button id="logout" class="btn btn-xs btn-default">Logout</button>
+        <select id="board" class="form-control"><option value="">Loading...</option></select>
+    </div>
+    <div class="form-group">
+        <label for="pattern">Github Pattern</label>
+        <p>Insert a pattern for finding trello card no with {{no}} key. ex) &amp;lt;{{no}}&amp;gt;</p>
+        <input type="text" id="pattern" placeholder="Insert a pattern for finding trello card no" class="form-control">
+    </div>
+    <div class="checkbox">
+        <label for="use">
+            <input type="checkbox" id="use" value="1"> Enable the trello with github
+        </label>
+    </div>
+</div>
+<script src="jquery.1.7.1.min.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

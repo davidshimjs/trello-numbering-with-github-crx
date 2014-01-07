@@ -1,0 +1,7 @@
+.__linkTrello {
+    cursor: pointer;
+    font-weight: bold;
+}
+.__linkTrello:hover {
+    text-decoration: underline;
+}
