@@ -1,8 +1,29 @@
 /* global chrome */
-chrome.runtime.sendMessage({
+var _options = {};
+var _port = chrome.runtime.connect({
+    name: 'github'
+});
+
+_port.postMessage({
     method: 'getOptions'
-}, function (options) {
-    var disabled = options.disabled === '1';
+});
+
+_port.onMessage.addListener(function (data) {
+    switch (data.method) {
+    case 'getOptions':
+        _options = {
+            board: data.board,
+            disabled: data.disabled,
+            pattern: data.pattern
+        };
+
+        _onStart();
+        break;
+    }
+});
+
+var _onStart = function () {
+    var disabled = _options.disabled === '1';
     var INTERVAL = 3000;
 
     if (disabled) {
@@ -16,4 +37,4 @@ chrome.runtime.sendMessage({
             shortIds[i].classList.remove('hide');
         }
     }, INTERVAL);
-});
+};

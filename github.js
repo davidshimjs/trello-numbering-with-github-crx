@@ -17,7 +17,7 @@ _port.onMessage.addListener(function (data) {
             pattern: data.pattern
         };
 
-        onStart();
+        _onStart();
         break;
 
     case 'getShortUrl':
@@ -30,7 +30,7 @@ _port.onMessage.addListener(function (data) {
     }
 });
 
-var onStart = function () {
+var _onStart = function () {
     var boardId = _options.board;
     var disabled = _options.disabled === '1';
     var pattern = _options.pattern;
