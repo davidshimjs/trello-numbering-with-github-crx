@@ -19,6 +19,16 @@ var opts = {
 
 and you can add this project on chrome extensions as folder.
 
+Gallery
+---
+![Trello](https://raw.github.com/davidshimjs/trello-numbering-with-github-crx/master/readme/screenshot1.png)
+
+As you can see, Trello cards can have short number.
+
+![Github](https://raw.github.com/davidshimjs/trello-numbering-with-github-crx/master/readme/screenshot2.png)
+
+You can link your trello card with short number at github message.
+
 License
 ---
 this projec under the MIT License
