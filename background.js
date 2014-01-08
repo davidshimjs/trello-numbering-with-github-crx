@@ -38,7 +38,7 @@ var _onAuthorize = function (token) {
 };
 
 chrome.runtime.onConnect.addListener(function(port) {
-    if (port.name === 'github') {
+    if (port.name === 'github' || port.name === 'trello') {
         port.onMessage.addListener(function (request) {
             switch (request.method) {
             case 'getOptions':
@@ -71,26 +71,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         _onAuthorize(request);
         return;
     }
-    // switch (request.method) {
-    // case 'getOptions':
-    //     sendResponse({
-    //         board: localStorage.getItem(prefix + 'board'),
-    //         disabled: localStorage.getItem(prefix + 'disabled'),
-    //         pattern: localStorage.getItem(prefix + 'pattern')
-    //     });
-    //     break;
-
-    // case 'getShortUrl':
-    //     Trello.boards.get(request.board + '/cards/' + request.no, {
-    //         fields: 'shortUrl'
-    //     }, function (data) {
-    //         sendResponse({
-    //             id: data.id,
-    //             shortUrl: data.shortUrl
-    //         });
-    //     })
-    //     break;
-    // }
 });
 
 Trello.authorize({

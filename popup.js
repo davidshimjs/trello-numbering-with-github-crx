@@ -86,7 +86,7 @@ window.addEventListener('load', function () {
 
     // Set default value
     if (!localStorage.getItem(prefix + 'pattern')) {
-        localStorage.setItem(prefix + 'pattern', '&lt;{{no}}&gt;');
+        localStorage.setItem(prefix + 'pattern', '{{{no}}}');
     }
 
     if (localStorage.getItem(prefix + 'pattern')) {

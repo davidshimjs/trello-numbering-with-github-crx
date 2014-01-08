@@ -1,5 +1,10 @@
 /* global chrome */
 var _options = {};
+
+var _escapeRegExp = function (str) {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+}
+
 var _port = chrome.runtime.connect({
     name: 'github'
 });
@@ -40,13 +45,13 @@ var _onStart = function () {
         return;
     }
 
-    var rxPattern = new RegExp(pattern.toString().replace(/\{\{no\}\}/i, '([0-9]+)'), 'g');
+    var rxPattern = new RegExp(_escapeRegExp(pattern).replace(/\\\{\\\{no\\\}\\\}/i, '([0-9]+)'), 'g');
     var messages = document.querySelectorAll(
-        '.commits .message blockquote,' +
-        '.commits .message a,' +
-        '.commits .message p,' +
+        '.message blockquote,' +
+        '.message a,' +
+        '.message p,' +
         'p.commit-title,' +
-        '.comment-body p,' + 
+        '.comment-body p,' +
         '.comment-body code'
     );
 

@@ -3,7 +3,7 @@
   "name": "Trello with Github",
   "version": "0.0.1",
   "description": "Using a number of trello card with github commit log",
-  "version": "1.0",
+  "version": "1.0.1",
   "permissions": [
     "tabs",
     "https://github.com/",

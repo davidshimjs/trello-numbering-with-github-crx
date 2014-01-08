@@ -1,7 +1,7 @@
 /* global chrome */
 var _options = {};
 var _port = chrome.runtime.connect({
-    name: 'github'
+    name: 'trello'
 });
 
 _port.postMessage({
