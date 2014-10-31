@@ -31,7 +31,7 @@ You can link your trello card with short number at github message.
 
 License
 ---
-this projec under the MIT License
+this project under the MIT License
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/davidshimjs/trello-numbering-with-github-crx/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
